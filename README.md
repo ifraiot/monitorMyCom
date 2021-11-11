@@ -22,7 +22,7 @@
 
 3. Install via go package
 ```
-go install github.com/ifraiot/monitorMyCom
+go install github.com/ifraiot/monitorMyCom@latest
 ```
 
 4. Start command to get monitoring values.
