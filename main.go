@@ -75,12 +75,12 @@ func main() {
 			ifraCon.AddMeasurement("battery_last_capacity", battery.Full)
 			ifraCon.AddMeasurement("battery_charge_rate", battery.Current/battery.Full*100)
 
-			fmt.Printf("current capacity: %f mWh, ", battery.Current)
-			fmt.Printf("last full capacity: %f mWh, ", battery.Full)
-			fmt.Printf("design capacity: %f mWh, ", battery.Design)
-			fmt.Printf("charge rate: %f mW, ", battery.ChargeRate)
-			fmt.Printf("voltage: %f V, ", battery.Voltage)
-			fmt.Printf("design voltage: %f V\n", battery.DesignVoltage)
+			// fmt.Printf("current capacity: %f mWh, ", battery.Current)
+			// fmt.Printf("last full capacity: %f mWh, ", battery.Full)
+			// fmt.Printf("design capacity: %f mWh, ", battery.Design)
+			// fmt.Printf("charge rate: %f mW, ", battery.ChargeRate)
+			// fmt.Printf("voltage: %f V, ", battery.Voltage)
+			// fmt.Printf("design voltage: %f V\n", battery.DesignVoltage)
 		}
 
 		time.Sleep(5 * time.Second)
