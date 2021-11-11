@@ -31,7 +31,7 @@ const IFRA_MQTT_BROKER_HOST = "mqtt.ifra.io"
 const IFRA_MQTT_BROKER_PORT = 1883
 
 func NewIFRA(topic, username, password string) Ifra {
-
+	fmt.Println("start connect: ", topic, username, password)
 	opts := mqtt.NewClientOptions()
 	opts.AddBroker(fmt.Sprintf("tcp://%s:%d", IFRA_MQTT_BROKER_HOST, IFRA_MQTT_BROKER_PORT))
 	opts.SetClientID("go_mqtt_client")

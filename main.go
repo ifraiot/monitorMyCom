@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"os"
 	"time"
@@ -13,10 +14,15 @@ import (
 
 func main() {
 
+	topic := flag.String("topic", "", "Organization's topic")
+	username := flag.String("username", "", "MQTT username")
+	password := flag.String("password", "", "MQTT password")
+	flag.Parse()
+
 	ifraCon := ifrasdk.NewIFRA(
-		"organization/0693b475-7fed-4749-b8f2-39ead20066c8/messages",
-		"041123a9-433b-44da-98b5-f9095f28b1ec",
-		"d581534a-b12a-4c2a-8ad2-d5edf39cf7d4")
+		*topic,
+		*username,
+		*password)
 
 	for {
 		memory, err := memory.Get()
@@ -67,14 +73,14 @@ func main() {
 
 			ifraCon.AddMeasurement("battery_capacity", battery.Current)
 			ifraCon.AddMeasurement("battery_last_capacity", battery.Full)
-			ifraCon.AddMeasurement("battery_charge_rate", battery.Full/battery.Current*100)
+			ifraCon.AddMeasurement("battery_charge_rate", battery.Current/battery.Full*100)
 
-			// fmt.Printf("current capacity: %f mWh, ", battery.Current)
-			// fmt.Printf("last full capacity: %f mWh, ", battery.Full)
-			// fmt.Printf("design capacity: %f mWh, ", battery.Design)
-			// fmt.Printf("charge rate: %f mW, ", battery.ChargeRate)
-			// fmt.Printf("voltage: %f V, ", battery.Voltage)
-			// fmt.Printf("design voltage: %f V\n", battery.DesignVoltage)
+			fmt.Printf("current capacity: %f mWh, ", battery.Current)
+			fmt.Printf("last full capacity: %f mWh, ", battery.Full)
+			fmt.Printf("design capacity: %f mWh, ", battery.Design)
+			fmt.Printf("charge rate: %f mW, ", battery.ChargeRate)
+			fmt.Printf("voltage: %f V, ", battery.Voltage)
+			fmt.Printf("design voltage: %f V\n", battery.DesignVoltage)
 		}
 
 		time.Sleep(5 * time.Second)
