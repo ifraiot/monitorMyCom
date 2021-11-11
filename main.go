@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/distatus/battery"
-	"github.com/ifraiot/monitorYourComputer/ifrasdk"
+	"github.com/ifraiot/monitorMyCom/ifrasdk"
 	"github.com/mackerelio/go-osstat/memory"
 	"github.com/shirou/gopsutil/cpu"
 )

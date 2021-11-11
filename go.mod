@@ -1,4 +1,4 @@
-module github.com/ifraiot/monitorYourComputer
+module github.com/ifraiot/monitorMyCom
 
 go 1.17
 
