@@ -3,18 +3,18 @@ module github.com/ifraiot/monitorYourComputer
 go 1.17
 
 require (
+	github.com/distatus/battery v0.10.0
 	github.com/eclipse/paho.mqtt.golang v1.3.5
 	github.com/mackerelio/go-osstat v0.2.1
 	github.com/mainflux/senml v1.5.0
+	github.com/shirou/gopsutil v3.21.10+incompatible
 )
 
 require (
 	github.com/StackExchange/wmi v1.2.1 // indirect
-	github.com/distatus/battery v0.10.0 // indirect
 	github.com/fxamacker/cbor/v2 v2.2.0 // indirect
 	github.com/go-ole/go-ole v1.2.5 // indirect
 	github.com/gorilla/websocket v1.4.2 // indirect
-	github.com/shirou/gopsutil v3.21.10+incompatible // indirect
 	github.com/tklauser/go-sysconf v0.3.9 // indirect
 	github.com/tklauser/numcpus v0.3.0 // indirect
 	github.com/x448/float16 v0.8.4 // indirect
