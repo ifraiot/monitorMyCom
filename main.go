@@ -14,12 +14,15 @@ import (
 
 func main() {
 
+	host := flag.String("host", "", "MQTT host")
 	topic := flag.String("topic", "", "Organization's topic")
 	username := flag.String("username", "", "MQTT username")
 	password := flag.String("password", "", "MQTT password")
+
 	flag.Parse()
 
 	ifraCon := ifrasdk.NewIFRA(
+		*host,
 		*topic,
 		*username,
 		*password)
